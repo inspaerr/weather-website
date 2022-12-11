@@ -1,0 +1,121 @@
+
+.double-border-button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 10px 30px;
+  position: relative;
+  border: 2px solid #f1c40f;
+  color: #f1c40f;
+  font-family: 'Montserrat', sans-serif;
+  transition: .4s;
+}
+.double-border-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: .4s;
+}
+.double-border-button:hover:after {
+  border-color: #f1c40f;
+  width: calc(100% - 10px);
+  height: calc(100% + 10px);
+}
+
+.shine-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fe6637;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fe6637;
+  transition: .2s ease-in-out;
+}
+.shine-button:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+}
+.shine-button:hover {
+  background: #fe6637;
+  color: #fff;
+}
+.shine-button:hover:before {
+  left: 150px;
+  transition: .5s ease-in-out;
+}
+.soc {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.domshtags_become_gescoverable {
+  margin: 70px auto;
+  width: 58%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.domshtags_become_gescoverable ul{position: absolute;}
+.domshtags_become_gescoverable ul li {
+  list-style: none;  
+  float: left;  
+  margin-right:7px;
+}
+.domshtags_become_gescoverable ul li a {
+  display: block;
+  position: relative;
+  text-align: center;
+  color: #bfbcbc;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  line-height: 60px;
+  background: #525050;
+  transition: .5s;
+  border: 2px solid #a8a9ab;
+}
+.domshtags_become_gescoverable ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #17bbdc;
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+.domshtags_become_gescoverable ul li a:hover:before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px lime;
+  }
+.domshtags_become_gescoverable ul li a:hover {
+  color:lime;
+  box-shadow: 0 0 5px lime;
+}
+
+.imgmap{
+  width: 300px;
+  align-self: center;
+}

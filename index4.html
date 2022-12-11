@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Подключение к googleFonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода по регионам</title> <!--Название страницы-->
+  <link rel="icon" type="image/png" href="favicon.png"> <!--привязывание фавиконки-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style3.css">
+  <link rel="stylesheet" type="text/css" href="style4.css">
+  <link rel="stylesheet" type="text/css" href="style5.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <a class="logo">Погода по регионам</a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index_today.html">Погода сейчас</a></li>
+        <li><a href="index4.html">Карта Москвы</a></li>
+        <li><a href="index3.html">Карта осадков</a></li>
+        <li><a href="index2.html">Связаться с автором</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Кликните по области для того, чтобы посмотреть погоду для вашего округа</h2>
+  <div><img src="карта мск old.png" usemap="#image-map" class="imgmap">
+    <map name="image-map" class="imgmap">
+      <area target="" alt="Central" title="Central"
+        href="index5.html?region=central&longitude=37.618336392403535&latitude=55.7516042935751" coords="153,123,46"
+        shape="circle">
+      <area target="" alt="West" title="West"
+        href="index5.html?region=west&longitude=37.37368063503262&latitude=55.750760342361005"
+        coords="3,280,120,163,110,84,4,5" shape="poly">
+      <area target="" alt="South" title="South"
+        href="index5.html?region=south&longitude=37.63690025531904&latitude=55.59354867094621"
+        coords="9,277,124,168,186,164,298,276" shape="poly">
+      <area target="" alt="East" title="East"
+        href="index5.html?region=east&longitude=37.831705330025386&latitude=55.78297167974808"
+        coords="297,269,197,160,198,86,297,0" shape="poly">
+      <area target="" alt="North" title="North" href="index5.html?region=north&longitude=37.561430&latitude=55.918938"
+        coords="5,0,290,2,190,82,112,81" shape="poly">
+    </map>
+  </div>
+</body>

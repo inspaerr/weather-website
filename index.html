@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Подключение к googleFonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода на месяц</title> <!--Название страницы-->
+  <link rel="icon" type="image/png" href="favicon.png"> <!--привязывание фавиконки-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style3.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <a class="logo">Погода на месяц</a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index_today.html">Погода сейчас</a></li>
+        <li><a href="index4.html">Карта Москвы</a></li>
+        <li><a href="index3.html">Карта осадков</a></li>
+        <li><a href="index2.html">Связаться с автором</a></li>
+      </ul>
+    </nav>
+    <a href="index5.html"></a>
+  </header>
+
+  <main style="overflow-x: scroll;width: 100vw;"> <!---Основное содержание страницы-->
+    <!---<h1>Погода в Москве</h1>
+      <div class="weather">
+        <p>Погода: <span class="temp"></span>°C</p>
+        <p>Влажность: <span class="humidity"></span>%</p>
+        <p>Ветер: <span class="wind"></span> км/ч</p>
+    </div>-->
+    <h1>Прогноз погоды в Москве на месяц</h1>
+    <div class="day-of-week">
+      <div> Пн </div>
+      <div> Вт </div>
+      <div> Ср </div>
+      <div> Чт </div>
+      <div> Пт </div>
+      <div style="color: #CC0000;"> Сб </div>
+      <div style="color: #CC0000;"> Вс </div>
+    </div>
+    <div class="date-grid" id="calendar-grid">
+      <!--- Необходимо создать первый день вручную, иначе css-скрипт не сможет сделать отступ --->
+      <div class="weather-day" id="weather-day-1">
+        <p class="weather-date">1</p>
+        <p class="weather-degrees" id="weather-degrees-1">-1°C</p>
+        <div class="inline-div-weather" style="display:flex">
+          <p class="weather-degrees-min" id="weather-degrees-min-1">-2°C</p>
+          <p class="weather-windspeed" id="weather-windspeed-1">-2 м/с</p>
+        </div>
+      </div>
+
+      <script> // Скрипт для автоматического создания календаря и всплывающего окна
+        function showModalWin(i) {
+          var darkLayer = document.createElement('div'); // слой затемнения
+          darkLayer.id = 'shadow'; // id чтобы подхватить стиль
+          document.body.appendChild(darkLayer); // включаем затемнение
+
+          var modalWin = document.getElementById('popupWin'); // находим наше "окно"
+          modalWin.style.display = 'block'; // "включаем" его
+
+          darkLayer.onclick = function () {  // при клике на слой затемнения все исчезнет
+            darkLayer.parentNode.removeChild(darkLayer); // удаляем затемнение
+            modalWin.style.display = 'none'; // делаем окно невидимым
+            return false;
+          };
+          var exact_day = document.getElementById("exact_day");
+          var exact_min_degrees = document.getElementById("exact_min_degrees");
+          var exact_max_degrees = document.getElementById("exact_max_degrees");
+          var exact_apparent_max_degrees = document.getElementById("exact_apparent_max_degrees");
+          var exact_apparent_min_degrees = document.getElementById("exact_apparent_min_degrees");
+          var exact_wind_speed = document.getElementById("exact_wind_speed");
+          exact_day.textContent = i;
+          exact_min_degrees.textContent = window.min_temp[i - 1] + "°C";
+          exact_max_degrees.textContent = window.max_temp[i - 1] + "°C";
+          exact_wind_speed.textContent = window.wind_speed[i - 1] + " м/с";
+          exact_apparent_max_degrees.textContent = window.apparent_max[i - 1] + "°C";
+          exact_apparent_min_degrees.textContent = window.apparent_min[i - 1] + "°C";
+        }
+
+        window.addEventListener("load", () => {
+          let container = document.getElementById("calendar-grid");
+          for (let i = 2; i <= 31; i++) {
+            let cell = document.createElement("div");
+            cell.setAttribute("class", "weather-day");
+            cell.setAttribute("id", "weather-day-" + i);
+            cell.addEventListener("click", () => showModalWin(i));
+            // p для даты
+            let date = document.createElement("p")
+            date.textContent = i;
+            date.setAttribute("class", "weather-date");
+            // p для градусов
+            let degrees = document.createElement("p")
+            degrees.textContent = -1 + "°C";
+            degrees.setAttribute("class", "weather-degrees");
+            degrees.setAttribute("id", "weather-degrees-" + i);
+
+            // div для распложения минимальных градусов и скорости ветра в строку
+            let _div = document.createElement("div");
+            _div.setAttribute("class", "inline-div-weather");
+            _div.setAttribute("style", "display:flex");
+
+            // p для минимальных градусов
+            let min_degrees = document.createElement("p")
+            min_degrees.textContent = -2 + "°C";
+            min_degrees.setAttribute("class", "weather-degrees-min");
+            min_degrees.setAttribute("id", "weather-degrees-min-" + i);
+
+            // p для скорости ветра
+            let windspeed = document.createElement("p")
+            windspeed.textContent = -2 + " м/с";
+            windspeed.setAttribute("class", "weather-windspeed");
+            windspeed.setAttribute("id", "weather-windspeed-" + i);
+
+            _div.appendChild(min_degrees);
+            _div.appendChild(windspeed);
+
+            cell.appendChild(date);
+            cell.appendChild(degrees);
+            cell.appendChild(_div);
+            container.appendChild(cell);
+          }
+        });
+      </script>
+    </div>
+    <!-- Всплывающее окно с подробной информацией о погоде -->
+    <div style="text-align: center" id="popupWin" class="modalwin">
+      <h2> Погода на <span id="exact_day"></span> декабря </h2>
+      <h3> Максимальная температура: <span id="exact_max_degrees"></span> (По ощущениям: <span
+          id="exact_apparent_max_degrees"></span>)</h3>
+      <h3> Минимальная температура: <span id="exact_min_degrees"></span> (По ощущениям: <span
+          id="exact_apparent_min_degrees"></span>)</h3>
+      <h3> Скорость ветра: <span id="exact_wind_speed"></span></h3>
+    </div>
+  </main>
+  <script src='get-weather-monthly.js'></script>
+  </div>
+</body>

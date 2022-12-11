@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода в регионе</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style3.css">
+  <link rel="stylesheet" type="text/css" href="style4.css">
+  <link rel="stylesheet" type="text/css" href="style5.css">
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo">Погода</a>
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index_today.html">Погода сейчас</a></li>
+        <li><a href="index4.html">Карта Москвы</a></li>
+        <li><a href="index3.html">Карта осадков</a></li>
+        <li><a href="index2.html">Связаться с автором</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2>Погода в <span id="region_name"></span></h2>
+  <h3> Температура: <span id="region_degrees"></span> (По ощущениям: <span id="region_apparent_degrees"></span>)</h3>
+  <h3> Скорость ветра: <span id="region_wind_speed"></span></h3>
+  <h3> Относительная влажность: <span id="region_hidranity"></span></h3>
+  <script src="get-region-weather.js"></script>
+</body>

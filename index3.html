@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <!--<link rel="icon" type="image/png" href="images/logo.png">-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style3.css">
+  <link rel="icon" type="image/png" href="favicon.png"> <!--привязывание фавиконки-->
+  <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <a class="logo">Осадки</a>
+    <!-- Hamburger icon -->
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index_today.html">Погода сейчас</a></li>
+        <li><a href="index4.html">Карта Москвы</a></li>
+        <li><a href="index3.html">Карта осадков</a></li>
+        <li><a href="index2.html">Связаться с автором</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="precipitationparent">
+    <img src="карта мск old.png" width="300px">
+  </div>
+  <script src="get-region-precipitation.js"></script>
+</body>
+
+</html>
