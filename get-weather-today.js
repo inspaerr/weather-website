@@ -7,13 +7,13 @@ if (currentdate.getHours() < 10) {
 }
 var now = currentdate.getFullYear() + "-" + (currentdate.getMonth() + 1) + "-" + currentdate.getDate() + "T" + current_hours + ":00"
 
-let url = "https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,windspeed_10m&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,windspeed_10m_max&timezone=Europe%2FMoscow";
+let url = "https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&hourly=temperature_2m," +
+    "relativehumidity_2m,apparent_temperature,windspeed_10m&daily=temperature_2m_max,temperature_2m_min," +
+    "apparent_temperature_max,apparent_temperature_min,sunrise,sunset,windspeed_10m_max&timezone=Europe%2FMoscow";
 
 async function update_weather_today() {
     let response = await fetch(url);
     let data = await response.json();
-    // Вывод температуры
-    // console.log(data);
     var times = data.hourly.time
     var apparent_temperature = data.hourly.apparent_temperature
     var temperature_2m = data.hourly.temperature_2m

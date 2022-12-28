@@ -6,10 +6,12 @@ html {
     font-family: "myFonth1";
     src: url("fonts/Oswald-Medium.ttf");
 }
+
 @font-face {
     font-family: "myFonth2";
     src: url("fonts/Oswald-Regular.ttf");
 }
+
 @font-face {
     font-family: "myFonth3";
     src: url("fonts/Oswald-Light.ttf");
@@ -17,7 +19,6 @@ html {
 
 body {
     margin: 0 auto;
-    background-color:red;
     padding: 0 20px 20px 20px;
     width: 100%;
 }
@@ -29,12 +30,14 @@ h1 {
     color: black;
     font-family: 'PT Sana Narrow', sans-serif;
 }
+
 h2 {
     margin: 0;
     padding: 20px 0;
     color: black;
     font-family: "myFonth2";
 }
+
 li h3 {
     margin: 0;
     padding: 20px 0;
@@ -43,28 +46,31 @@ li h3 {
 }
 
 .map {
- display: flex;
- justify-content: center;
- align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.image{
+
+.image {
     width: 750px;
 }
 
 .day-of-week,
 .date-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  width: 900px;
-  text-align: left;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 900px;
+    text-align: left;
 }
-.day-of-week div{
+
+.day-of-week div {
     width: 100px;
     margin-left: 20px
 }
+
 .weather-day {
     background-color: rgba(220, 220, 220, 0.5);
-    width:110px;
+    width: 110px;
     height: 110px;
     border-radius: 25px;
     border-width: 3px;
@@ -75,17 +81,20 @@ li h3 {
     padding-left: 12px;
     padding-top: 12px;
 }
-.weather-degrees{
+
+.weather-degrees {
     padding-left: 5px;
     font-size: xx-large;
     padding-top: 3px;
     padding-bottom: 8px;
 }
-.weather-degrees-min{
+
+.weather-degrees-min {
     opacity: 0.8;
     font-size: small;
 }
-.weather-windspeed{
+
+.weather-windspeed {
     padding-left: 15px;
     opacity: 0.8;
     font-size: small;
@@ -103,32 +112,38 @@ li h3 {
 } */
 .date-grid div:first-child {
     grid-column: 4;
-  }
+}
 
-  .modalwin { 
-    height: 200px;  
+.modalwin {
+    height: 200px;
     width: 300px;
-    border: 3px outset gray; 
+    border: 3px outset gray;
     background: wheat;
-    top: 20%; /* отступ сверху */
+    top: 20%;
+    /* отступ сверху */
     right: 0;
     left: 0;
-    font-size: 14px; 
+    font-size: 14px;
     margin: 0 auto;
-    z-index:2; /* поверх всех */
-    display: none;  /* сначала невидим */
-    position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+    z-index: 2;
+    /* поверх всех */
+    display: none;
+    /* сначала невидим */
+    position: fixed;
+    /* фиксированное позиционирование, окно стабильно при прокрутке */
     padding: 15px;
     border: 1px solid #383838;
 }
 
-#shadow { 
+#shadow {
     position: fixed;
-    width:100%;
-    height:100%;
-    z-index:1; /* поверх всех  кроме окна*/
-    background:#000;
-    opacity: 0.5; /*прозрачность*/
-    left:0;
-    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* поверх всех  кроме окна*/
+    background: #000;
+    opacity: 0.5;
+    /*прозрачность*/
+    left: 0;
+    top: 0;
 }

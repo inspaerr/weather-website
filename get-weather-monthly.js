@@ -1,4 +1,4 @@
-let url = `https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&daily=apparent_temperature_max,apparent_temperature_min,temperature_2m_max,temperature_2m_min,windspeed_10m_max&timezone=Europe%2FMoscow&start_date=2022-12-01&end_date=2022-12-26`;
+let url = `https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&daily=apparent_temperature_max,apparent_temperature_min,temperature_2m_max,temperature_2m_min,windspeed_10m_max&timezone=Europe%2FMoscow&start_date=2022-12-01&end_date=2022-12-31`;
 
 function get_color_for_degrees(_degrees) {
     if (_degrees > 0) {
