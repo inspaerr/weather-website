@@ -86,7 +86,7 @@ let parent_div = document.getElementById("precipitationparent")
 
 async function upd_weather_codes(){
     for (let i = 0; i < poses_long.length; i++) {
-        let url = `https://api.open-meteo.com/v1/forecast?latitude=${poses_lat[i]}&longitude=${poses_long[i]}&hourly=weathercode,temperature_2m&daily=temperature_2m_max,temperature_2m_min,windspeed_10m_max&timezone=Europe%2FMoscow&start_date=2022-12-01&end_date=2022-12-26`;
+        let url = `https://api.open-meteo.com/v1/forecast?latitude=${poses_lat[i]}&longitude=${poses_long[i]}&hourly=weathercode,temperature_2m&daily=temperature_2m_max,temperature_2m_min,windspeed_10m_max&timezone=Europe%2FMoscow&start_date=2022-12-01&end_date=2022-12-31`;
         let response = await fetch(url);
         let data = await response.json();
         // let data = res.data
